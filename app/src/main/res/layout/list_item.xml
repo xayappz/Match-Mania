@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="matchData"
+            type="com.xayappz.matchmania.models.Data" />
+    </data>
+
+
+    <RelativeLayout
+        android:id="@+id/itemview"
+        android:padding="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sporttypeTV"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMatchTime"
+            android:layout_below="@+id/sporttypeTV"
+            android:layout_width="match_parent"
+            android:layout_marginTop="4dp"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textStyle="bold"
+          />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMatchName"
+            android:layout_marginTop="4dp"
+            android:layout_below="@id/tvMatchTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{matchData.eventName}"
+            android:textColor="@color/text_clr"
+            android:textStyle="bold"
+           />
+
+    </RelativeLayout>
+
+
+</layout>
+

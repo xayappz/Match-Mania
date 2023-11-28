@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="customTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/TabTextAppearance</item>
+    </style>
+    <style name="TabTextAppearance" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/bg_clr</item>
+    </style>
+    <style name="Theme.MatchMania" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="colorPrimaryDark">@android:color/black</item>
+
+    </style>
+</resources>
