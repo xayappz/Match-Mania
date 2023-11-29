@@ -68,10 +68,10 @@ class AdapterHelper {
             sporttypeCK.visibility = View.VISIBLE
         }
         if (Tennis.size > 0) {
-            sporttypeSC.visibility = View.VISIBLE
+            sporttypeTN.visibility = View.VISIBLE
         }
         if (Soccer.size > 0) {
-            sporttypeTN.visibility = View.VISIBLE
+            sporttypeSC.visibility = View.VISIBLE
 
         }
 
