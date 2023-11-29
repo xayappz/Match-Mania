@@ -33,12 +33,12 @@ object Request : ViewModel() {
             .addCallAdapterFactory(rxAdapter)
             .build()
 
-        val fetchData = retrofit.create(com.xayappz.matchmania.controllers.ApiService::class.java)
+        val fetchData = retrofit.create(ApiService::class.java)
 
         fetchData.getMatchData()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(com.xayappz.matchmania.controllers.Request.fetchMatchData())
+            .subscribe(fetchMatchData())
     }
 
 
@@ -49,19 +49,19 @@ object Request : ViewModel() {
             }
 
             override fun onNext(t: Match) {
-                com.xayappz.matchmania.controllers.Request.isComplete.value = false
-                com.xayappz.matchmania.controllers.Request.response.value = t
-                com.xayappz.matchmania.controllers.Request.isError.value = false
+                isComplete.value = false
+                response.value = t
+                isError.value = false
             }
 
             override fun onError(e: Throwable) {
-                com.xayappz.matchmania.controllers.Request.isError.value = true
-                com.xayappz.matchmania.controllers.Request.isComplete.value = false
+                isError.value = true
+                isComplete.value = false
             }
 
             override fun onComplete() {
-                com.xayappz.matchmania.controllers.Request.isError.value = false
-                com.xayappz.matchmania.controllers.Request.isComplete.value = true
+                isError.value = false
+                isComplete.value = true
 
             }
         }
@@ -74,13 +74,13 @@ object Request : ViewModel() {
         val finalMatchList = mutableListOf<Data>()
         list.forEach {
             if (it.sportId?.toInt() == SportType.CRICKET.type) {
-                com.xayappz.matchmania.controllers.Request.isCricket = true
+                isCricket = true
                 Cricket.add(it)
             } else if (it.sportId?.toInt() == SportType.SOCCER.type) {
-                com.xayappz.matchmania.controllers.Request.isSoccer = true
+                isSoccer = true
                 Soocer.add(it)
             } else {
-                com.xayappz.matchmania.controllers.Request.isTennis = true
+                isTennis = true
                 Tennis.add(it)
             }
         }
