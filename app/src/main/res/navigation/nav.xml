@@ -9,14 +9,4 @@
         android:name="com.xayappz.matchmania.views.MatchFragment"
         android:label="fragment_first"
         tools:layout="@layout/recycler" />
-    <fragment
-        android:id="@+id/secondFragment"
-        android:name="com.xayappz.matchmania.views.MatchFragment"
-        android:label="fragment_second"
-        tools:layout="@layout/recycler" />
-    <fragment
-        android:id="@+id/thirdFragment"
-        android:name="com.xayappz.matchmania.views.MatchFragment"
-        android:label="fragment_third"
-        tools:layout="@layout/recycler" />
 </navigation>
